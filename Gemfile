@@ -25,11 +25,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'shoulda-matchers'
 
 group :test do
   gem 'byebug'
-  gem "rspec-rails", "~> 2.14"
-  gem "factory_girl_rails"
+  gem 'rspec-rails', '~> 2.14'
+  gem 'factory_girl_rails'
   gem 'ffaker'
 end
 
@@ -46,11 +47,11 @@ gem 'active_model_serializers'
 
 # project gems:
 # for rails 5 :
-# gem 'sabisu_rails', github: "jvrsgsty/sabisu-rails"
+# gem 'sabisu_rails', github: 'jvrsgsty/sabisu-rails'
 # rails 4:
-gem 'sabisu_rails', github: "IcaliaLabs/sabisu-rails"
+gem 'sabisu_rails', github: 'IcaliaLabs/sabisu-rails'
 gem 'compass-rails', '>= 2.0.2'
 gem 'furatto'
 gem 'font-awesome-rails'
 gem 'simple_form'
-gem "devise"
+gem 'devise'
