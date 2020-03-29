@@ -5,3 +5,4 @@ FactoryGirl.define do
     password_confirmation "12345678"
   end
 end
+# User.create(email: 'thefun@mailowe.com', password: '1234abcdwkwk', password_confirmation: '1234abcdwkwk')
