@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe Api::V1::UsersController do
-  before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1" }
+  # header sudah direfactor ke request helper jadi gaperlu ditulis lagi:
+  # before(:each) { request.headers['Accept'] = "application/vnd.marketplace.v1" }
   # specify content type
-  before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
+  # before(:each) { request.headers['Content-Type'] = Mime::JSON.to_s }
 
   describe "GET #show" do
     before(:each) do
