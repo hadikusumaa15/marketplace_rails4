@@ -9,7 +9,7 @@ require 'rspec/rails'
 # in _spec.rb will both be required and run as specs, causing the specs to be
 # run twice. It is recommended that you do not name files matching this glob to
 # end with _spec.rb. You can configure this pattern with with the --pattern
-# option on the command line or in ~/.rspec, .rspec or `.rspec-local`.
+# option on the command line or in ~/.rspec, .rspec or `.rspec-local`. (Penting!)
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # Checks for pending migrations before tests are run.
@@ -24,6 +24,7 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
+  # Shoulda matcher harus diconfig dulu agar methodnya bisa dipanggil di spec
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   config.include(Shoulda::Matchers::ActionController, { type: :model })
@@ -72,4 +73,9 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/v/3-0/docs
   config.infer_spec_type_from_file_location!
+  config.include Request::HeadersHelpers, :type => :controller
+
+  config.before(:each, type: :controller) do
+    include_default_accept_headers
+  end
 end
