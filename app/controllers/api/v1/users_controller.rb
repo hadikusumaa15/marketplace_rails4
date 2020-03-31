@@ -15,7 +15,9 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
+    # user = User.find(params[:id])
+    # dengan session user jadi current_user
+    user = current_user
   
     if user.update(user_params)
       render json: user, status: 200, location: [:api, user]
@@ -25,8 +27,10 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
-    user.destroy
+    # user = User.find(params[:id])
+    # user.destroy
+    # using auth session to destroy user
+    current_user.destroy
     head 204
   end
 
