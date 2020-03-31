@@ -27,6 +27,8 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
   config.include(Shoulda::Matchers::ActionController, { type: :model })
+  # dipakai untuk helperjson
+  config.include Request::JsonHelpers, :type => :controller
   # , file_path: /spec\/controllers/})
   config.include Devise::Test::ControllerHelpers, type: :controller
   # ## Mock Framework
