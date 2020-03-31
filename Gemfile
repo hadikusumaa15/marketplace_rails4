@@ -30,7 +30,10 @@ gem 'shoulda-matchers'
 group :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 2.14'
-  gem 'factory_girl_rails'
+end
+
+group :development, :test do
+  gem "factory_girl_rails"
   gem 'ffaker'
 end
 
