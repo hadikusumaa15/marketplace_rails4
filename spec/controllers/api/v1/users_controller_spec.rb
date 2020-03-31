@@ -104,6 +104,6 @@ describe Api::V1::UsersController do
 
   end
 end
-# brspec spec/controllers/users_controller_spec.rb
+# brspec spec/controllers/api/v1/users_controller_spec.rb
 # kalau shoulda matcher ga terbaca lihat ini :
 # https://stackoverflow.com/questions/35753438/rspec-error-undefined-method-respond-with/41185896
