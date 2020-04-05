@@ -20,6 +20,7 @@ describe User do
   it { should validate_uniqueness_of(:email).ignoring_case_sensitivity }
   # associations:
   it { should have_many(:products) }
+  it { should have_many(:orders) }
 
   describe "when email is not present" do
     before { @user.email = " " }
