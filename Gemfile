@@ -30,6 +30,7 @@ gem 'shoulda-matchers'
 group :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 2.14'
+  gem "email_spec"
 end
 
 group :development, :test do
