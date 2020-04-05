@@ -126,6 +126,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.6)
     jsonapi-renderer (0.2.2)
+    kaminari (0.17.0)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     launchy (2.5.0)
       addressable (~> 2.7)
     loofah (2.4.0)
@@ -254,6 +257,7 @@ DEPENDENCIES
   furatto
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   rails (= 4.2.11.1)
   rake (< 11.0)
   rspec-rails (~> 2.14)
