@@ -52,29 +52,21 @@ describe Api::V1::OrdersController do
 
       product_1 = FactoryGirl.create :product
       product_2 = FactoryGirl.create :product
-      order_params = { total: 50, user_id: current_user.id, product_ids: [product_1.id, product_2.id] }
+      order_params = { product_ids_and_quantities: [[product_1.id, 2],[ product_2.id, 3]] }
       post :create, user_id: current_user.id, order: order_params
     end
 
-    it "returns the just user order record" do
+    it "returns just user order record" do
       order_response = json_response
       expect(order_response[:id]).to be_present
     end
 
+    it "embeds the two product objects related to the order" do
+      order_response = json_response
+      expect(order_response[:products].size).to eql 2
+    end
+
     it { should respond_with 201 }
-  end
-
-  describe '#set_total!' do
-    before(:each) do
-      product_1 = FactoryGirl.create :product, price: 100
-      product_2 = FactoryGirl.create :product, price: 85
-
-      @order = FactoryGirl.build :order, product_ids: [product_1.id, product_2.id]
-    end
-
-    it "returns the total amount to pay for the products" do
-      expect{@order.set_total!}.to change{@order.total}.from(0).to(185)
-    end
   end
 end
 # brspec spec/controllers/api/v1/orders_controller_spec.rb
