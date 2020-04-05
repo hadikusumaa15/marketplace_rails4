@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'shoulda-matchers'
 gem 'kaminari'
+gem 'delayed_job_active_record'
 
 group :test do
   gem 'byebug'
